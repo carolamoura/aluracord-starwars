@@ -6,8 +6,8 @@ import { createClient } from '@supabase/supabase-js'
 import { ButtonSendSticker } from '../src/components/ButtonSendSticker';
 
 // Como fazer AJAX: https://medium.com/@omariosouto/entendendo-como-fazer-ajax-com-a-fetchapi-977ff20da3c6
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MDg2OTA3MywiZXhwIjoxOTU2NDQ1MDczfQ.343ibq7UYFPDdyfsfGmEqUma01RW7P7KC9U2MDAGSkI';
-const SUPABASE_URL = 'https://kysxypdmtxjlkdysdlas.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzY3MzUyNywiZXhwIjoxOTU5MjQ5NTI3fQ.ZnI7_KDy-qAK2FohWwS11yllkin2lMWuViKaEXL7YeU';
+const SUPABASE_URL = 'https://vhpwavgniiuqrmpcqwvy.supabase.co';
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 function escutaMensagensEmTempoReal(adicionaMensagem) {
@@ -158,13 +158,14 @@ export default function ChatPage() {
                 color: appConfig.theme.colors.neutrals[100],
               }}
             />
-             {/* CallBack */}
-             <ButtonSendSticker
-              onStickerClick={(sticker) => {
-                // console.log('[USANDO O COMPONENTE] Salva esse sticker no banco', sticker);
-                handleNovaMensagem(':sticker: ' + sticker);
-              }}
-            />
+            {/* CallBack */}
+         <ButtonSendSticker
+         onStickerClick={(sticker) => {
+           // console.log('[USANDO O COMPONENTE] Salva esse sticker no banco', sticker);
+           handleNovaMensagem(':sticker: ' + sticker);
+         }}
+       />
+            
           </Box>
         </Box>
       </Box>
@@ -262,7 +263,9 @@ function MessageList(props) {
                            mensagem.texto */}
             {/* {mensagem.texto} */}
           </Text>
+          
         );
+         
       })}
     </Box>
   )
